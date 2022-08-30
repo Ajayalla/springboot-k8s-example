@@ -1,4 +1,4 @@
-FROM openjdk:8
-EXPOSE 8080
-ADD target/springboot-k8s-demo.jar springboot-k8s-demo.jar
-ENTRYPOINT ["java","-jar","/springboot-k8s-demo.jar"]
+FROM openjdk:8-jdk-alpine
+ADD target/frontendApplication.jar frontendApplication.jar
+EXPOSE 8083
+ENTRYPOINT ["java", "-jar", "frontendApplication.jar"]
